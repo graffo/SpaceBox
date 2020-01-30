@@ -28,6 +28,71 @@
             </ul>
         </nav>
     </header>
+
+    <script>
+              
+                
+        fetch('dados.json')
+        .then((response) => {
+          return response.json();
+        })
+        .then((dados) => {
+            var integrantes = document.querySelector('#integrantes')
+            function renderDados(){
+                for (dado of dados){
+                    var boxElement = document.createElement('div')
+                    var fotoElement = document.createElement('div')
+                    var imgElement = document.createElement('img')
+                    var numElement = document.createElement('div')
+                    var idText = document.createTextNode(dado.id);
+                    var imgFoto = document.getElementsByClassName("foto_img");
+                    var nomeElement = document.createElement('div')
+                    var nomeText = document.createTextNode(dado.nome);
+                    var br = document.createElement('br');
+                    var spanElement = document.createElement('span');
+                    var spanText = document.createTextNode(dado.cargo);
+
+
+                    boxElement.setAttribute("class", "box");
+                    numElement.setAttribute("class", "numero");
+                    fotoElement.setAttribute("class", "foto");
+                    imgElement.setAttribute("class", "foto_img");      
+                    nomeElement.setAttribute("class", "nome");               
+                    
+                    
+                    integrantes.appendChild(boxElement);
+                    boxElement.appendChild(numElement);
+                    numElement.appendChild(idText);
+                    boxElement.appendChild(fotoElement)
+                    fotoElement.appendChild(imgElement)
+                    imgFoto.setAttribute = ('src', 'fotos');
+                    boxElement.appendChild(nomeElement);
+                    nomeElement.appendChild(nomeText);
+                    nomeElement.appendChild(br);
+                    nomeElement.appendChild(spanElement);
+                    spanElement.appendChild(spanText);
+
+                    
+
+                }
+            }
+            renderDados();
+            console.log(renderDados)
+          
+          
+          
+          
+        
+          
+          
+          
+          
+         
+        });
+
+        
+      
+      </script>
     <!--Conteudo-->
     <main>
         <div id="superior">
@@ -44,96 +109,7 @@
         </div>
         <div id="integrantes">
            
-                    <div class="box ativo">
-                        <div class="numero">1</div>
-                        <div class="foto">
-                            <img src="fotos/foto-alberto.jpg" alt="Alberto">
-                        </div>
-                        <div class="nome">
-                            Alberto<br>
-                            <span>Presidente</span>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="numero">1</div>
-                        <div class="foto">
-                            <img src="fotos/foto-alberto.jpg" alt="Alberto">
-                        </div>
-                        <div class="nome">
-                            Alberto<br>
-                            <span>Presidente</span>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="numero">1</div>
-                        <div class="foto">
-                            <img src="fotos/foto-alberto.jpg" alt="Alberto">
-                        </div>
-                        <div class="nome">
-                            Alberto<br>
-                            <span>Presidente</span>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="numero">1</div>
-                        <div class="foto">
-                            <img src="fotos/foto-alberto.jpg" alt="Alberto">
-                        </div>
-                        <div class="nome">
-                            Alberto<br>
-                            <span>Presidente</span>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="numero">1</div>
-                        <div class="foto">
-                            <img src="fotos/foto-alberto.jpg" alt="Alberto">
-                        </div>
-                        <div class="nome">
-                            Alberto<br>
-                            <span>Presidente</span>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="numero">1</div>
-                        <div class="foto">
-                            <img src="fotos/foto-alberto.jpg" alt="Alberto">
-                        </div>
-                        <div class="nome">
-                            Alberto<br>
-                            <span>Presidente</span>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="numero">1</div>
-                        <div class="foto">
-                            <img src="fotos/foto-alberto.jpg" alt="Alberto">
-                        </div>
-                        <div class="nome">
-                            Alberto<br>
-                            <span>Presidente</span>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="numero">1</div>
-                        <div class="foto">
-                            <img src="fotos/foto-alberto.jpg" alt="Alberto">
-                        </div>
-                        <div class="nome">
-                            Alberto<br>
-                            <span>Presidente</span>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="numero">1</div>
-                        <div class="foto">
-                            <img src="fotos/foto-alberto.jpg" alt="Alberto">
-                        </div>
-                        <div class="nome">
-                            Alberto<br>
-                            <span>Presidente</span>
-                        </div>
-                    </div>
+            
               
         </div>
     </main>
