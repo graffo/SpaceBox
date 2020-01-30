@@ -1,0 +1,214 @@
+:root {
+    --branco: #ffffff;
+    --cinza: #707070;
+    --azul: #092432;
+    --azulc: #4dd2d2;
+    --sombra: 0px 0px 4px 0px rgba(0,0,0,0.32);
+    --c_claro: #f0f1ef;
+}
+/* Inicio reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+  min-height: 100%;
+}
+html {
+  height: 100%;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+span{
+  font-family: inherit;
+}
+/* Fim reset */
+
+ul{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #d9d9d9;
+  background: -moz-linear-gradient(top, #d9d9d9 0%, #ffffff 100%);
+  background: -webkit-linear-gradient(top, #d9d9d9 0%, #ffffff 100%);
+  background: linear-gradient(to bottom, #d9d9d9 0%, #ffffff 100%);
+  height: 100%; }
+
+header {
+  width: 100%;
+  background: #d9d9d9;
+  background: -moz-linear-gradient(left, #4dd2d2 0%, #092331 100%);
+  background: -webkit-linear-gradient(left, #4dd2d2 0%, #092331 100%);
+  background: linear-gradient(to right, #4dd2d2 0%, #092331 100%); }
+
+nav {
+  width: 1370px;
+  margin: 0 auto;
+  padding: 20px 20px; 
+  margin-bottom: 20px;
+}
+
+h1 {
+  background: url(../images/SpaceBox-Logo.png) no-repeat;
+  width: 223px;
+  height: 64px;
+  display: inline-block;
+  text-indent: -99999px; }
+
+nav ul {
+  float: right;
+  width: auto;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block; 
+  padding: 6px 12px;
+  line-height: 52px;
+}
+nav li:last-child{
+  padding-right: 0;
+}
+
+nav li a {
+  display: block;
+  
+  text-decoration: none;
+  text-transform: uppercase;
+  
+  color: var(--branco);
+  font-size: 24px 
+}
+main{
+  width: 1390px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+#superior{
+  width: 99%;
+  box-shadow: var(--sombra);
+  margin: 12px 7px;
+  padding: 5px 0;
+  background: var(--c_claro);
+  
+}
+.foto{
+  width: 140px;
+  height: 140px;
+  overflow: hidden;
+  border-radius: 70px;
+  text-align: center;
+  margin: 15px 20px;
+  display: inline-block;
+  
+}
+.dados{
+  width: 60%;
+  display: inline-block;
+  font-size: 20px;
+  vertical-align: top;
+}
+.dados ul{
+  margin: 35px 0 0 0;
+  padding-left: 0;
+  list-style: none;
+  float: left;
+}
+.dados li{
+  margin-bottom: 20px;
+}
+.a_label{
+  width: 90px;
+  display: inline-block;
+  text-align: right;
+  color: var(--cinza);
+  text-transform: uppercase;
+  margin-right: 17px;
+}
+.a_campo{
+  display: inline-block;
+  color: var(--azul);
+  font-weight: bold;
+
+}
+#integrantes .box{
+  box-shadow: var(--sombra);
+  position: relative;
+  background-color: var(--c_claro);
+  font-weight: bold;
+  color: var(--azul);
+  width: 32%;
+  display: inline-block;
+  font-size: 20px;
+  vertical-align: text-top;
+  margin: 7px 7px 7px 8px;
+}
+#integrantes .numero{
+  position: absolute;
+  z-index: 200;
+  background-color: var(--azulc);
+  overflow: hidden;
+  border-radius: 20px;
+  text-align: center;
+  vertical-align: top;
+  padding: 9px 15px;
+  top: 15px;
+  left: 120px; 
+}
+
+#integrantes .nome{
+  width: 57%;
+  float: right;
+  margin-top: 65px;
+}
+#integrantes .nome span{
+  font-weight: normal;
+  color: var(--cinza);
+  font-size: 16px;
+}
+.ativo, .ativo span, #integrantes .box:hover{
+  background-color: var(--azul) !important;
+  color: var(--branco) !important;
+}
