@@ -37,6 +37,11 @@
           return response.json();
         })
         .then((dados) => {
+            document.getElementsByTagName("img")[0].src = "fotos/"+ dados[0].foto;
+            document.getElementById("nome_a").innerHTML = dados[0].nome;
+            document.getElementById("cargo_a").innerHTML = dados[0].cargo;
+            document.getElementById("idade_a").innerHTML = dados[0].idade;
+            
             var integrantes = document.querySelector('#integrantes')
             function renderDados(){
                 for (dado of dados){
@@ -45,7 +50,6 @@
                     var imgElement = document.createElement('img')
                     var numElement = document.createElement('div')
                     var idText = document.createTextNode(dado.id);
-                    var imgFoto = document.getElementsByClassName("foto_img");
                     var nomeElement = document.createElement('div')
                     var nomeText = document.createTextNode(dado.nome);
                     var br = document.createElement('br');
@@ -53,28 +57,31 @@
                     var spanText = document.createTextNode(dado.cargo);
 
 
-                    boxElement.setAttribute("class", "box");
+                    boxElement.setAttribute("class", "box"+" "+dado.id);
                     numElement.setAttribute("class", "numero");
                     fotoElement.setAttribute("class", "foto");
-                    imgElement.setAttribute("class", "foto_img");      
-                    nomeElement.setAttribute("class", "nome");               
+                    imgElement.setAttribute("class", "foto_img");
+                    nomeElement.setAttribute("class", "nome");    
+
+                     
                     
                     
                     integrantes.appendChild(boxElement);
                     boxElement.appendChild(numElement);
                     numElement.appendChild(idText);
-                    boxElement.appendChild(fotoElement)
-                    fotoElement.appendChild(imgElement)
-                    imgFoto.setAttribute = ('src', 'fotos');
+                    boxElement.appendChild(fotoElement);
+                    fotoElement.appendChild(imgElement);
+                    imgElement.src = "fotos/"+ dado.foto;
                     boxElement.appendChild(nomeElement);
                     nomeElement.appendChild(nomeText);
                     nomeElement.appendChild(br);
                     nomeElement.appendChild(spanElement);
                     spanElement.appendChild(spanText);
-
                     
-
+                    
+                    
                 }
+                
             }
             renderDados();
             console.log(renderDados)
@@ -103,7 +110,7 @@
                 <ul>
                     <li><div id="nome_label" class="a_label">Nome:</div><div id="nome_a" class="a_campo">Alberto</div></li>
                     <li><div id="cargo_label" class="a_label">Cargo:</div><div id="cargo_a" class="a_campo">Presidente</div></li>
-                    <li><div id="idade_label" class="a_label">Idade:</div><div id="nome_a" class="a_campo">46</div></li>
+                    <li><div id="idade_label" class="a_label">Idade:</div><div id="idade_a" class="a_campo">46</div></li>
                 </ul>
             </div>    
         </div>
