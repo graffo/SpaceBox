@@ -29,6 +29,27 @@
         </nav>
     </header>
 
+    
+    <!--Conteudo-->
+    <main>
+        <div id="superior">
+            <div class="foto">
+                <img src="fotos/foto-alberto.jpg" alt="Alberto">
+            </div>
+            <div class="dados">
+                <ul>
+                    <li><div id="nome_label" class="a_label">Nome:</div><div id="nome_a" class="a_campo">Alberto</div></li>
+                    <li><div id="cargo_label" class="a_label">Cargo:</div><div id="cargo_a" class="a_campo">Presidente</div></li>
+                    <li><div id="idade_label" class="a_label">Idade:</div><div id="idade_a" class="a_campo">46</div></li>
+                </ul>
+            </div>    
+        </div>
+        <div id="integrantes">
+           
+            
+              
+        </div>
+    </main>
     <script>
               
                 
@@ -58,6 +79,7 @@
 
 
                     boxElement.setAttribute("class", "box"+" "+dado.id);
+                    boxElement.setAttribute("onclick", "function(){ dadoSuperior('"+dado.id+"')}" );
                     numElement.setAttribute("class", "numero");
                     fotoElement.setAttribute("class", "foto");
                     imgElement.setAttribute("class", "foto_img");
@@ -83,11 +105,19 @@
                 }
                 
             }
+            function dadoSuperior(a){
+                document.getElementsByTagName("img")[0].src = "fotos/"+ dados[a].foto;
+                document.getElementById("nome_a").innerHTML = dados[a].nome;
+                document.getElementById("cargo_a").innerHTML = dados[a].cargo;
+                document.getElementById("idade_a").innerHTML = dados[a].idade;
+            }
             renderDados();
-            console.log(renderDados)
+            
+            
+            
           
-          
-          
+            
+                    
           
         
           
@@ -100,26 +130,5 @@
         
       
       </script>
-    <!--Conteudo-->
-    <main>
-        <div id="superior">
-            <div class="foto">
-                <img src="fotos/foto-alberto.jpg" alt="Alberto">
-            </div>
-            <div class="dados">
-                <ul>
-                    <li><div id="nome_label" class="a_label">Nome:</div><div id="nome_a" class="a_campo">Alberto</div></li>
-                    <li><div id="cargo_label" class="a_label">Cargo:</div><div id="cargo_a" class="a_campo">Presidente</div></li>
-                    <li><div id="idade_label" class="a_label">Idade:</div><div id="idade_a" class="a_campo">46</div></li>
-                </ul>
-            </div>    
-        </div>
-        <div id="integrantes">
-           
-            
-              
-        </div>
-    </main>
-
 </body>
 </html>
