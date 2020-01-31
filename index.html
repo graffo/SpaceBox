@@ -28,29 +28,7 @@
             </ul>
         </nav>
     </header>
-
-    
-    <!--Conteudo-->
-    <main>
-        <div id="superior">
-            <div class="foto">
-                <img src="fotos/foto-alberto.jpg" alt="Alberto">
-            </div>
-            <div class="dados">
-                <ul>
-                    <li><div id="nome_label" class="a_label">Nome:</div><div id="nome_a" class="a_campo">Alberto</div></li>
-                    <li><div id="cargo_label" class="a_label">Cargo:</div><div id="cargo_a" class="a_campo">Presidente</div></li>
-                    <li><div id="idade_label" class="a_label">Idade:</div><div id="idade_a" class="a_campo">46</div></li>
-                </ul>
-            </div>    
-        </div>
-        <div id="integrantes">
-           
-            
-              
-        </div>
-    </main>
-    <script>
+<script>
               
                 
         fetch('dados.json')
@@ -66,6 +44,7 @@
             var integrantes = document.querySelector('#integrantes')
             function renderDados(){
                 for (dado of dados){
+                    var posicao = dado.id - 1;
                     var boxElement = document.createElement('div')
                     var fotoElement = document.createElement('div')
                     var imgElement = document.createElement('img')
@@ -79,7 +58,7 @@
 
 
                     boxElement.setAttribute("class", "box"+" "+dado.id);
-                    boxElement.setAttribute("onclick", "function(){ dadoSuperior('"+dado.id+"')}" );
+                    boxElement.setAttribute("onclick", "dadoSuperior('"+ posicao +"')");
                     numElement.setAttribute("class", "numero");
                     fotoElement.setAttribute("class", "foto");
                     imgElement.setAttribute("class", "foto_img");
@@ -104,31 +83,59 @@
                     
                 }
                 
+            
+                
             }
-            function dadoSuperior(a){
-                document.getElementsByTagName("img")[0].src = "fotos/"+ dados[a].foto;
-                document.getElementById("nome_a").innerHTML = dados[a].nome;
-                document.getElementById("cargo_a").innerHTML = dados[a].cargo;
-                document.getElementById("idade_a").innerHTML = dados[a].idade;
-            }
+            
             renderDados();
-            
-            
-            
-          
-            
-                    
-          
-        
-          
-          
-          
-          
-         
         });
-
         
-      
-      </script>
+    </script>
+    <!--Conteudo-->
+    <main>
+        <div id="superior">
+            <div class="foto">
+                <img src="fotos/foto-alberto.jpg" alt="Alberto">
+            </div>
+            <div class="dados">
+                <ul>
+                    <li><div id="nome_label" class="a_label">Nome:</div><div id="nome_a" class="a_campo">Alberto</div></li>
+                    <li><div id="cargo_label" class="a_label">Cargo:</div><div id="cargo_a" class="a_campo">Presidente</div></li>
+                    <li><div id="idade_label" class="a_label">Idade:</div><div id="idade_a" class="a_campo">46</div></li>
+                </ul>
+            </div>    
+        </div>
+        <div id="integrantes">
+           
+            
+              
+        </div>
+    </main>
+    
+<script>
+    function dadoSuperior(a){
+
+        fetch('dados.json')
+        .then((response) => {
+          return response.json();
+        })
+        .then((Supc) => {
+            document.getElementsByTagName("img")[0].src = "fotos/"+ Supc[a].foto;
+            document.getElementById("nome_a").innerHTML = Supc[a].nome;
+            document.getElementById("cargo_a").innerHTML = Supc[a].cargo;
+            document.getElementById("idade_a").innerHTML = Supc[a].idade;
+            
+            
+            
+            
+            
+        });
+        
+
+
+    }
+  
+</script>
+    
 </body>
 </html>
